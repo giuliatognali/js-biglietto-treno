@@ -9,4 +9,4 @@ Se etaUtente <18 allora prezzoBigliettoRidotto (prezzoBigliettoIntero /100 *20)
 (Se utente è over 65 avrà 40% di sconto)
 Se etaUtente >65 allora prezzoBigliettoRidotto (prezzoBigliettoIntero /100 *40)
 
-Stampare risultato del prezzo del biglietto
+Restituisco il risultato del prezzo del biglietto con solo due decimali

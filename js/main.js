@@ -3,21 +3,23 @@
 const km = parseInt(prompt('Inserisci il numero di chilometri che vuoi percorrere'));
 const ageUser = parseInt(prompt('Inserisci la tua età'));
 
+let ticketPrice = km * 0.21;
+let messaggio = 'Prezzo biglietto';
+
 console.log(km);
 console.log(ageUser);
+console.log(ticketPrice);
 
-const prezzoBigliettoIntero = km * 0.21;
-
-let  prezzoBigliettoRidotto;
 
 if (ageUser < 18) {
-    prezzoBigliettoRidotto = (prezzoBigliettoIntero - (prezzoBigliettoIntero / 100 * 20));
-    console.log(prezzoBigliettoRidotto);
-} else if (ageUser > 65) {
-    prezzoBigliettoRidotto = (prezzoBigliettoIntero - (prezzoBigliettoIntero / 100 * 40));
-    console.log(prezzoBigliettoRidotto);
-}
-else {
-    console.log(prezzoBigliettoIntero);
+    ticketPrice = ticketPrice - ticketPrice * 0.2;
+    messaggio = 'Prezzo con sconto minorenni'
+//    ticketPrice -= ticketPrice * 0,2; altro modo per scrivere quest'operazione
+} 
+else if (ageUser >=65) {
+    ticketPrice = ticketPrice - ticketPrice * 0.4;
+    messaggio = 'Prezzo con sconto over 65'
 }
 
+//console.log(ticketPrice); //questo è un numero
+console.log( `${messaggio}: ${ticketPrice.toFixed(2)} €`); //questa è una stringa 
